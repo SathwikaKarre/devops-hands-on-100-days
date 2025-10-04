@@ -10,6 +10,8 @@ ssh-copy-id tony@stapp01  (similarly copy for app server 2 and 3)
 ssh  tony@stapp01 (It will connect to app server 1 wthout asking for password similarly for app server 2 and 3)
 ## Check if public key is copied or not by using below commands in any one of the app servers after logged in.
 cd ~/.ssh/
+
 ls -l
+
 cat authorized_keys (you will see the jump host public key here which is added)
 
