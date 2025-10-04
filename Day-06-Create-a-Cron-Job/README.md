@@ -21,6 +21,8 @@ sudo crontab -u root -l (or) sudo crontab -l
 crontab -l
 ## Update cron job for root user by below command 
 sudo crontab -e
+
 add cron job here which is given (*/5 * * * * echo hello > /tmp/cron_text)
+
 Check after 5 min you will see hello in the text file mentioned.(For every 5 min script executes)
 
