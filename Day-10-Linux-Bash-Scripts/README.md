@@ -9,6 +9,8 @@ c. Copy the created archive to Nautilus Backup Server server in /backup/ locatio
 
 d. Please make sure script won't ask for password while copying the archive file. Additionally, the respective server user (for example, tony in case of App Server 1) must be able to run it.
 
+Note: Install Zip if its not there already before executing the script.
+
 # Steps
 ## Connect to App server 2 
 ssh steve@stapp02
@@ -30,6 +32,10 @@ scp /backup/xfusioncorp_blog.zip clint@stbkp01:/backup
 echo "execution success"
 
 save by using :wq! to the shell script file
+## Install Zip before executing script
+As it is centOS use below command to install zip
+
+sudo yum install zip -y
 ## To make sure script passsword less execution of the script use below commands
 ssh-keygen -t rsa (generates public and private key of that user or server)
 
