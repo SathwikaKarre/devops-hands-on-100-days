@@ -44,7 +44,9 @@ This will make sure the 5003 port will be at first row of ip tables to enable fi
 sudo systemctl restart httpd
 
 sudo systemctl status httpd
-## Check by using curl http://stapp01:5003
+## Again check the connection status of app server 1
+telnet stapp01 5003  (connection success)
+## Check by using curl http://stapp01:5003 as well
 you will get output of some html format which means the webapp is working fine on URL.
 
 
