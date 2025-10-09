@@ -16,7 +16,7 @@ sudo su -
 cat /etc/os-release  (o/p: Cent OS)
 ## Install the iptables and its dependencies on all app servers
 yum install iptables-services -y
-## To list the iptables along with lne numbers
+## To list the iptables along with line numbers
 sudo iptables -L -n --line-numbers  
 
 -L (list the iptables)
@@ -30,3 +30,9 @@ sudo iptables -I INPUT 1 -p tcp --dport 8089 -s stlb01 -j ACCEPT   (stlb01 is ac
 sudo iptables -I INPUT 2 -p tcp --dport 8089 -j DROP (all other app servers is droped from access through 8089 port)
 ## To make sure changes of iptables as it is after reboot use below command to save it
 service iptables save
+## Verify connecting using telnet
+telnet stapp01 8089 , telnet stapp02 8089 , telnet stapp03 8089  (accessible when logged in with stlb01 server)
+
+This is not accessibile through app server 1,2,3 when checked
+
+Hence the commands we executed are correct and task is solved.
