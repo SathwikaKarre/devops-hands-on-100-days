@@ -15,7 +15,7 @@ If status is inactive follow below steps in all servers if status is active ever
 ## Check httpd.conf to see what port is defined inside it (it will be anyway 5003)
 vi /etc/httpd/conf/httpd.conf
 ## Check if any of the other process are running on this port using below command
-netstat -luntp | grep 5003   (o/p: [tcp ...... 443(pid)])
+netstat -luntp | grep 3004   (o/p: [tcp ...... 443(pid)])
 
 -l (show listening sockects)
 
@@ -34,3 +34,7 @@ sudo systemctl restart httpd
 sudo systemctl status httpd
 
 Now the status of httpd will be active.
+## Check by using curl command whether you are able to see html output 
+curl http://stapp01:3004
+
+You will see html output that means Apache(httpd) is running successfully and status of it is active.
