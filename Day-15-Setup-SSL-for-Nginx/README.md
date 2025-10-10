@@ -20,6 +20,7 @@ systemctl status nginx
 sudo yum install nginx -y 
 ## Move SSL files to appropriate location
 mv /tmp/nautilus.crt /etc/pki/tls/certs
+
 mv /tmp/nautilus.key  /etc/pki/tls/private
 ## Check if those SSl certs are present in the path
 ls -l /etc/pki/tls/certs | grep "nautilus.crt"
@@ -38,7 +39,7 @@ uncomment settings for a TLS enabled server
 
 we should give the server name as IP adress here also
 
-change the paths and ssl certs for ssl_certificate and ssl_certificate_key as well (i.e: /etc/pki/tls/certs/nautilus.cert /etc/pki/tls/private/nautilus.key)
+change the paths and ssl certs for ssl_certificate and ssl_certificate_key as well (i.e: /etc/pki/tls/certs/nautilus.crt /etc/pki/tls/private/nautilus.key)
 ## Restart and check the status of nginx
 systemctl restart nginx
 
