@@ -22,15 +22,22 @@ cat /etc/os-release    (o/p: CentOS)
 yum install mariadb-server mariadb -y
 ## Install httpd,php on all app servers along with all dependencies
 sudo  dnf install php php-opcache php-gd php-curl php-mysqlnd
+
 sudo yum install httpd -y
 ## Enable and check the status of mariadb 
 systemctl enable mariadb
+
 systemctl status mariadb
+
 systemctl restart mariadb
 
 check the status again as its disabled before
 ## Enable and check the status of httpd,php on all app servers
-systemctl enable httpd php; systemctl restart httpd php; systemctl status httpd php
+systemctl enable httpd php; 
+
+systemctl restart httpd php; 
+
+systemctl status httpd php
 ## Check where Apache is running now
 vi /etc/httpd/conf/httpd.conf
 
@@ -43,7 +50,7 @@ systemctl restart httpd
 sudo -u root mysql
 
 Now we are inside mariadb so now execute the commands
-## Create a database in maraidb
+## Create a database in mariadb
 create database kodekloud_db6;
 
 show databases;
@@ -53,5 +60,8 @@ GRANT ALL PRIVILEGES ON kodekloud_db6.* TO 'kodekloud_roy'@'%' identified by 'LQ
 select user,host from mysql.user;
 
 show grants;
+## Finally check whether the website is working on LBR link
+you can able to access the website now.
+
 
 
