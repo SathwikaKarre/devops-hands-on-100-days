@@ -33,11 +33,7 @@ systemctl restart mariadb
 
 check the status again as its disabled before
 ## Enable and check the status of httpd,php on all app servers
-systemctl enable httpd php; 
-
-systemctl restart httpd php; 
-
-systemctl status httpd php
+systemctl enable httpd php; systemctl restart httpd php; systemctl status httpd php
 ## Check where Apache is running now
 vi /etc/httpd/conf/httpd.conf
 
@@ -56,9 +52,9 @@ create database kodekloud_db6;
 show databases;
 ## Create a user mentioned and grant all privilages
 GRANT ALL PRIVILEGES ON kodekloud_db6.* TO 'kodekloud_roy'@'%' identified by 'LQfKeWWxWD';   (This will create user if not exists and grant all privilages)
-
+## Check users along with host in the database mysql
 select user,host from mysql.user;
-
+## Show the privilages it has for the user logged currently using below command
 show grants;
 ## Finally check whether the website is working on LBR link
 you can able to access the website now.
